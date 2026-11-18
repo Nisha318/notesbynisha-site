@@ -1,0 +1,24 @@
+# Dependencies and build output
+node_modules/
+app/dist/
+
+# Terraform: commit .terraform.lock.hcl, ignore everything else generated
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+terraform/*.tfvars
+!terraform/terraform.tfvars.example
+
+# Local environment files
+.env
+.env.*
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/

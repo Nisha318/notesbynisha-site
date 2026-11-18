@@ -1,0 +1,37 @@
+// CloudFront Function (viewer request). Rendered by Terraform's templatefile().
+// Sends every hostname except the canonical one to the canonical host with a
+// permanent redirect. That covers www and any retired domain.
+function handler(event) {
+  var request = event.request;
+  var host = request.headers.host ? request.headers.host.value : "";
+
+  if (host !== "${canonical_host}") {
+    var parts = [];
+    var params = request.querystring;
+
+    Object.keys(params).forEach(function (key) {
+      var entry = params[key];
+      if (entry.multiValue) {
+        entry.multiValue.forEach(function (item) {
+          parts.push(key + "=" + item.value);
+        });
+      } else if (entry.value !== "") {
+        parts.push(key + "=" + entry.value);
+      } else {
+        parts.push(key);
+      }
+    });
+
+    var query = parts.length > 0 ? "?" + parts.join("&") : "";
+
+    return {
+      statusCode: 301,
+      statusDescription: "Moved Permanently",
+      headers: {
+        location: { value: "https://${canonical_host}" + request.uri + query },
+      },
+    };
+  }
+
+  return request;
+}

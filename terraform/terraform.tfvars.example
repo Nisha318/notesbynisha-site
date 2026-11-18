@@ -1,0 +1,27 @@
+# Copy to terraform.tfvars (git-ignored) and adjust. Every value is optional
+# because the defaults already describe this site.
+
+# root_domain      = "notesbynisha.com"
+# redirect_domains = ["nishacloud.com"]
+# github_repo      = "Nisha318/notesbynisha-site"
+
+# Set to false if this AWS account already has a GitHub OIDC provider.
+# create_github_oidc_provider = true
+
+# Keep any DNS records the domains use today that are not the website itself.
+# Add them BEFORE switching nameservers at GoDaddy, or they stop resolving.
+#
+# extra_dns_records = [
+#   {
+#     zone    = "notesbynisha.com"
+#     name    = "notesbynisha.com"
+#     type    = "MX"
+#     records = ["1 aspmx.l.google.com."]
+#   },
+#   {
+#     zone    = "notesbynisha.com"
+#     name    = "notesbynisha.com"
+#     type    = "TXT"
+#     records = ["v=spf1 include:_spf.google.com ~all"]
+#   },
+# ]
