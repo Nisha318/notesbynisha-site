@@ -120,6 +120,8 @@ In the repository settings, open Secrets and variables, then Actions, then Varia
 
 If the repository name is not `Nisha318/notesbynisha-site`, set `github_repo` in `terraform.tfvars` and apply again before the first deploy.
 
+If the deploy fails with "Not authorized to perform sts:AssumeRoleWithWebIdentity", the repository probably uses GitHub's immutable subject claims, which add owner and repository IDs to the token subject. Copy the default subject claim prefix from the repository's Settings, Actions, OIDC page into `github_oidc_subject_prefix` in `terraform.tfvars` and apply again.
+
 ### 7. Publish
 
 Push to `main`, or run the Deploy site workflow by hand. For the very first upload you can also run `make deploy`.

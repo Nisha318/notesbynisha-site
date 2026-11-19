@@ -16,6 +16,11 @@ resource "aws_iam_openid_connect_provider" "github" {
 
 locals {
   github_oidc_provider_arn = var.create_github_oidc_provider ? aws_iam_openid_connect_provider.github[0].arn : data.aws_iam_openid_connect_provider.github[0].arn
+
+  # Repositories created since mid-2026 put permanent owner and repository IDs
+  # in the token subject, for example repo:owner@123/name@456. The prefix is
+  # shown in the repository under Settings > Actions > OIDC.
+  github_subject_prefix = var.github_oidc_subject_prefix != "" ? var.github_oidc_subject_prefix : "repo:${var.github_repo}"
 }
 
 data "aws_iam_policy_document" "deploy_trust" {
@@ -37,7 +42,7 @@ data "aws_iam_policy_document" "deploy_trust" {
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:${var.github_repo}:ref:refs/heads/main"]
+      values   = ["${local.github_subject_prefix}:ref:refs/heads/main"]
     }
   }
 }
