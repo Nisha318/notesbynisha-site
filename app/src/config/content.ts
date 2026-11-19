@@ -34,9 +34,9 @@ export const focusAreas: FocusArea[] = [
   },
   {
     icon: "identity",
-    title: "Identity and Zero Trust",
+        title: "Identity and access",
     description:
-      "IAM design, OIDC and SAML federation across AWS and Microsoft Entra ID, Cognito, and Zero Trust practices aligned to the DoD reference architecture.",
+      "Least-privilege IAM roles and policies written in Terraform, and OIDC federation that gives GitHub Actions short-lived AWS credentials with no stored keys.",
   },
   {
     icon: "network",
