@@ -8,6 +8,11 @@
 # Set to false if this AWS account already has a GitHub OIDC provider.
 # create_github_oidc_provider = true
 
+# Temporary: forward old blog post addresses to the site that still hosts them.
+# Remove this line once the posts have a permanent home, and always before
+# adding that site's domain to redirect_domains.
+# legacy_blog_origin = "https://www.nishacloud.com"
+
 # Keep any DNS records the domains use today that are not the website itself.
 # Add them BEFORE switching nameservers at GoDaddy, or they stop resolving.
 #

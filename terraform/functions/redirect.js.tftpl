@@ -1,6 +1,7 @@
 // CloudFront Function (viewer request). Rendered by Terraform's templatefile().
 // Sends every hostname except the canonical one to the canonical host with a
-// permanent redirect. That covers www and any retired domain.
+// permanent redirect. That covers www and any retired domain. It can also
+// forward old blog addresses to the site that still hosts the posts.
 function handler(event) {
   var request = event.request;
   var host = request.headers.host ? request.headers.host.value : "";
@@ -31,6 +32,35 @@ function handler(event) {
         location: { value: "https://${canonical_host}" + request.uri + query },
       },
     };
+  }
+
+  // Temporary: while the old blog posts still live on another site, send
+  // their old addresses there. Uses 302 so browsers do not remember it once
+  // the posts move again. Turned off when legacy_blog_origin is empty.
+  var legacy = "${legacy_blog_origin}";
+  if (legacy !== "") {
+    var uri = request.uri;
+    var notThere = ${legacy_blog_missing_slugs};
+    var target = "";
+    var post = uri.match(/^\/posts\/([a-z0-9-]+)\/?$/);
+
+    if (uri === "/posts" || uri === "/posts/" || /^\/posts\/page\/[0-9]+\/?$/.test(uri)) {
+      target = legacy + "/blog/";
+    } else if (post && post[1] !== "page" && notThere.indexOf(post[1]) === -1) {
+      target = legacy + "/blog/" + post[1];
+    } else if (uri.indexOf("/assets/images/") === 0 || uri.indexOf("/assets/docs/") === 0) {
+      target = legacy + uri;
+    }
+
+    if (target !== "") {
+      return {
+        statusCode: 302,
+        statusDescription: "Found",
+        headers: {
+          location: { value: target },
+        },
+      };
+    }
   }
 
   return request;
