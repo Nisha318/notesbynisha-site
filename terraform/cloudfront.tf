@@ -15,7 +15,8 @@ resource "aws_cloudfront_function" "canonical_redirect" {
   runtime = "cloudfront-js-2.0"
   comment = "Redirect www and retired domains to the canonical host."
   publish = true
-  code    = templatefile("${path.module}/functions/redirect.js.tftpl", {
+
+  code = templatefile("${path.module}/functions/redirect.js.tftpl", {
     canonical_host            = var.root_domain
     legacy_blog_origin        = var.legacy_blog_origin
     legacy_blog_missing_slugs = jsonencode(var.legacy_blog_missing_slugs)
