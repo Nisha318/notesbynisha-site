@@ -16,7 +16,7 @@ export const focusAreas: FocusArea[] = [
   },
   {
     icon: "detect",
-    title: "AWS security services",
+    title: "Cloud-native security services",
     description:
       "GuardDuty, AWS Config, Inspector, Macie, and CloudTrail, wired into detection, audit, and alerting.",
   },
@@ -36,7 +36,7 @@ export const focusAreas: FocusArea[] = [
     icon: "identity",
     title: "Identity and Zero Trust",
     description:
-      "IAM design, OIDC and SAML federation, Cognito, and Zero Trust practices aligned to the DoD reference architecture.",
+      "IAM design, OIDC and SAML federation across AWS and Microsoft Entra ID, Cognito, and Zero Trust practices aligned to the DoD reference architecture.",
   },
   {
     icon: "network",

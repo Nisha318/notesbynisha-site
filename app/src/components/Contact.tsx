@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
         <div>
           <p className="text-silver text-lg leading-relaxed mb-8 max-w-xl">
             I am interested in cloud security engineering roles, advisory
-            work, and conversations about building defensible AWS
+            work, and conversations about building defensible cloud
             infrastructure. Reach out through any of these.
           </p>
           <ul className="space-y-4">

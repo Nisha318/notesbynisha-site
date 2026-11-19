@@ -14,12 +14,12 @@ export const site = {
 
   // Longer line for LinkedIn, the GitHub bio, and page metadata.
   headline:
-    "Cloud Security Engineer | Automating AWS security, compliance, and DevSecOps | CISSP",
+    "Cloud Security Engineer | Multicloud security and compliance automation on AWS and Azure | CISSP",
 
   // Cycles in the hero typing effect.
   roles: [
     "Cloud Security Engineer",
-    "AWS Security Automation",
+    "Multicloud Security Automation",
     "Infrastructure as Code",
     "Compliance Automation",
     "CISSP",
