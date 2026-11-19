@@ -14,20 +14,19 @@ const About: React.FC = () => {
       >
         <div className="space-y-5 text-silver leading-relaxed text-lg max-w-3xl">
           <p>
-            I build and secure cloud infrastructure across AWS and Azure. My
-            work sits where infrastructure as code, security services, and
-            compliance meet. I write Terraform that provisions whole
-            environments, wire up cloud-native detection and audit tooling,
-            and map the result to NIST 800-53, the CIS Benchmarks, and MITRE
-            ATT&amp;CK so the evidence is ready when an assessor asks for it.
+            I build and secure cloud infrastructure on AWS. My work sits where
+            infrastructure as code, security services, and compliance meet. I
+            write Terraform that provisions whole environments, wire up
+            AWS-native detection and audit tooling, and map the result to
+            NIST 800-53, the CIS Benchmarks, and MITRE ATT&CK so the evidence
+            is ready when an assessor asks for it.
           </p>
           <p>
             Before cloud engineering I spent years in enterprise networking.
             From there I moved into governance, risk, and compliance as a
             senior cybersecurity engineer working with the Risk Management
-            Framework.
-            That mix is why I design for the auditor and the attacker at the
-            same time.
+            Framework. That mix is why I design for the auditor and the
+            attacker at the same time.
           </p>
           <p>
             I taught myself to code as a teenager and I still learn best by

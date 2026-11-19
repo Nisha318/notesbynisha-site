@@ -84,10 +84,9 @@ export const credentials: Credential[] = [
     status: "in-progress",
   },
   {
-    // Move this to "earned" once you have passed it.
     name: "AWS Certified Security - Specialty",
     issuer: "AWS",
-    status: "in-progress",
+    status: "earned",
   },
   {
     name: "Certified Kubernetes Administrator (CKA)",
