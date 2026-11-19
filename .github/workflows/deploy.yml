@@ -24,6 +24,9 @@ concurrency:
 jobs:
   deploy:
     name: Build and publish
+    # Skipped until the AWS infrastructure exists and the repository
+    # variables from the README (step 6) are set.
+    if: ${{ vars.AWS_ROLE_ARN != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
