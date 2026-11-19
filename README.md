@@ -137,6 +137,10 @@ curl -sI https://notesbynisha.com | grep -i -E 'strict-transport|content-securit
 
 Moving the domains replaces whatever they serve now. Export your existing blog posts from notesbynisha.com and anything you want to keep from nishacloud.com first. Republishing old posts on dev.to is a good way to carry them forward. Old post URLs on notesbynisha.com will show the 404 page afterward.
 
+## Old blog links during the transition
+
+Until the old posts are republished, set `legacy_blog_origin` in `terraform.tfvars` to the site that still hosts them. Requests for `/posts/<slug>/` and `/assets/images/...` on notesbynisha.com are then forwarded there with a temporary (302) redirect. Clear the setting once the posts have a permanent home. Terraform refuses to combine it with `redirect_domains`, because a retired domain that redirects here cannot also receive the old blog traffic.
+
 ## Day to day
 
 | Task | Command |
