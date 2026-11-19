@@ -9,6 +9,15 @@ updates:
     directory: "/app"
     schedule:
       interval: "weekly"
+    # Minor and patch updates arrive as one pull request. Major versions
+    # (for example Tailwind 4 or Vite 8) need code changes, so they are
+    # left for a deliberate upgrade.
+    groups:
+      npm-minor-and-patch:
+        update-types: ["minor", "patch"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "terraform"
     directory: "/terraform"
