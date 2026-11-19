@@ -28,6 +28,17 @@ variable "github_repo" {
   default     = "Nisha318/notesbynisha-site"
 }
 
+variable "github_oidc_subject_prefix" {
+  type        = string
+  description = "Subject claim prefix GitHub puts in this repository's OIDC tokens, copied from Settings > Actions > OIDC. Needed for repositories that use immutable subject claims, for example repo:owner@123/name@456. Leave empty to use repo:<github_repo>."
+  default     = ""
+
+  validation {
+    condition     = var.github_oidc_subject_prefix == "" || startswith(var.github_oidc_subject_prefix, "repo:")
+    error_message = "github_oidc_subject_prefix must start with repo: and must not include the :ref: part."
+  }
+}
+
 variable "create_github_oidc_provider" {
   type        = bool
   description = "Create the GitHub OIDC provider. Set to false if this AWS account already has one."

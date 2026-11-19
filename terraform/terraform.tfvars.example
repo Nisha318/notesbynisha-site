@@ -5,6 +5,10 @@
 # redirect_domains = ["nishacloud.com"]
 # github_repo      = "Nisha318/notesbynisha-site"
 
+# Repositories created since mid-2026 use immutable subject claims. Copy the
+# "Default subject claim prefix" from the repository's Settings > Actions > OIDC.
+# github_oidc_subject_prefix = "repo:Nisha318@<owner-id>/notesbynisha-site@<repo-id>"
+
 # Set to false if this AWS account already has a GitHub OIDC provider.
 # create_github_oidc_provider = true
 
