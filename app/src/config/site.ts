@@ -27,8 +27,8 @@ export const site = {
 
   // Profile links. Leave a value empty to hide it everywhere.
   githubUsername: "Nisha318",
-  devtoUsername: "", // example: "nisha318", turns on the Blog nav item and the Writing section
-  linkedinUrl: "", // example: "https://www.linkedin.com/in/your-handle"
+  devtoUsername: "nisha_mcdonnell_313b6b294", // example: "nisha318", turns on the Blog nav item and the Writing section
+  linkedinUrl: "https://www.linkedin.com/in/nishapmcd", // example: "https://www.linkedin.com/in/your-handle"
   youtubeUrl: "", // example: "https://www.youtube.com/@your-handle"
   siteRepoUrl: "", // example: "https://github.com/Nisha318/notesbynisha-site"
 

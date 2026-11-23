@@ -106,32 +106,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Secure GRC Pipeline",
+    title: "From Docker to EKS",
     description:
-      "Maps Terraform findings to NIST controls and MITRE ATT&CK techniques so compliance evidence comes from the infrastructure code itself.",
-    tags: ["Terraform", "NIST 800-53", "MITRE ATT&CK"],
-    repo: "secure-grc-pipeline",
+      "Stage-by-stage container security build from local Docker through managed Kubernetes, with Trivy scanning and NIST 800-53 mapping at each layer.",
+    tags: ["Docker", "EKS", "Trivy", "OpenTofu", "GitHub Actions"],
+    repo: "container-security-progression",
   },
   {
-    title: "Secure Incident Response",
+    title: "Operation Aegis",
     description:
-      "Automated AWS incident response pipeline aligned to NIST 800-61, from detection through containment.",
-    tags: ["AWS", "Incident Response", "NIST 800-61"],
-    repo: "secure-incident-response",
-  },
-  {
-    title: "Secure Lighthouse Keeper",
-    description:
-      "Secrets management and encryption lab built around a fictional company, using Secrets Manager, KMS, RDS, and Lambda.",
-    tags: ["Terraform", "Secrets Manager", "KMS", "RDS", "Lambda"],
-    repo: "secure-lighthouse-keeper",
-  },
-  {
-    title: "Private AI Workload on EKS",
-    description:
-      "A private document question-and-answer application on EKS with Amazon Bedrock, deployed in a personal AWS account.",
-    tags: ["EKS", "Bedrock", "RAG"],
-    repo: "secure-private-ai-eks",
+      "DevSecOps capstone on a FastAPI demo banking app, with security gates for code and dependency scanning built and the remaining phases underway.",
+    tags: ["GitHub Actions", "Semgrep", "Trivy", "CodeQL"],
+    repo: "operation-aegis",
+    status: "In progress",
   },
   {
     title: "Terraform Flask Lab",
@@ -140,6 +127,43 @@ export const projects: Project[] = [
     tags: ["OpenTofu", "EC2", "GitHub OIDC", "S3 backend"],
     repo: "terraform-flask-lab",
     status: "Complete",
+  },
+  {
+    title: "Application Vulnerability Scanning",
+    description:
+      "Multi-tool SAST and secrets scanning pipeline with pre-commit hooks and DefectDojo triage, mapped to NIST 800-53.",
+    tags: ["Semgrep", "Gitleaks", "NJSScan", "DefectDojo", "GitHub Actions"],
+    repo: "app-vuln-scanning",
+    status: "Complete",
+  },
+  // The four below are not public yet. Add `repo` back when each one is.
+  {
+    title: "Secure GRC Pipeline",
+    description:
+      "Maps Terraform findings to NIST controls and MITRE ATT&CK techniques so compliance evidence comes from the infrastructure code itself.",
+    tags: ["Terraform", "NIST 800-53", "MITRE ATT&CK"],
+    status: "In progress",
+  },
+  {
+    title: "Secure Incident Response",
+    description:
+      "Automated AWS incident response pipeline aligned to NIST 800-61, from detection through containment.",
+    tags: ["AWS", "Incident Response", "NIST 800-61"],
+    status: "In progress",
+  },
+  {
+    title: "Secure Lighthouse Keeper",
+    description:
+      "Secrets management and encryption lab built around a fictional company, using Secrets Manager, KMS, RDS, and Lambda.",
+    tags: ["Terraform", "Secrets Manager", "KMS", "RDS", "Lambda"],
+    status: "In progress",
+  },
+  {
+    title: "Private AI Workload on EKS",
+    description:
+      "A private document question-and-answer application on EKS with Amazon Bedrock, deployed in a personal AWS account.",
+    tags: ["EKS", "Bedrock", "RAG"],
+    status: "In progress",
   },
   {
     title: "Runtime Detection with Falco",
@@ -152,13 +176,5 @@ export const projects: Project[] = [
     description:
       "Terraform lab that scans container images with Amazon Inspector and exports findings to S3.",
     tags: ["Terraform", "Amazon Inspector", "S3"],
-  },
-  {
-    title: "Operation Aegis",
-    description:
-      "DevSecOps capstone on a FastAPI demo banking app, with security gates for code and dependency scanning built and the remaining phases underway.",
-    tags: ["GitHub Actions", "Semgrep", "Trivy", "CodeQL"],
-    repo: "operation-aegis",
-    status: "In progress",
   },
 ];
